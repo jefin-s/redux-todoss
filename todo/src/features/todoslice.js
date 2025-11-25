@@ -9,11 +9,15 @@ const todoslice = createSlice({
     },
     removetodo:(state,action)=>{
        return state.filter((itemm,i)=>i!=action.payload)
+    },
+    updatetodo:(state,action)=>{
+      const{index,newText}=action.payload
+        state[index]=newText
     }
   },
 });
-  
-export const { addtodo,removetodo } = todoslice.actions;
+
+export const { addtodo,removetodo,updatetodo } = todoslice.actions;
 export default todoslice.reducer;
 
 
